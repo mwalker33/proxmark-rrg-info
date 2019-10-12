@@ -1,0 +1,361 @@
+<html>
+<!DOCTYPE html>
+<head>
+<TITLE>T55xx Configuration</TITLE>
+<link rel="stylesheet" type="text/css" href="css1.css"/>
+</head>
+<body>
+<div class=title>
+<div class=heading1>T55x77 Config Block 0/Page 0</div>
+</div>
+<div class=data>
+<div class=settings1>
+<div class=heading2>Config. Block 0 Page 0</div>
+<table>
+<tr><td>HEX</td><td><input id="Block0-0-Hex" size=9 value="000880E0"/> 
+<button class=button onclick="DecodeConfigHex()">Decode</button></td></tr>
+<tr><td>Binary</td><td><input id="Block0-0-Bin" size=33 value="00000000000010001000000011100000"/>
+<button class=button onclick="DecodeConfigBin()">Decode</button>
+</td></tr>
+</table>
+<table class=table1>
+  <tr><td class=td-heading-r><b>Option</td><td class=td-heading-l><b>Value</td><tr>
+  <tr><td class=td-option>Master Key</td>
+  <td class=td-value><select id="MasterKey">
+        <option value="0000" selected>0000 - 0 Not set</option>
+        <option value="0110">0110 - 6 disable test mode</option>
+        <option value="1001">1001 - 9 disable test/exteneded mode and Init Delay</option>
+        </select>
+    </td></tr>
+  
+  <tr><td class=td-option>fixed</td>
+  <td class=td-value><Select id="f1">
+      <option value="0000000" selected>0000000 - Not used</option>
+      <option value="0000" disabled>0000 - Not used</option>
+  </td></tr>
+  
+  <tr><td class=td-option>Data Bit Rate</td>
+    <td class=td-value>
+        <div id=BitRate1><select id="DataBitRate1">
+        <option value="000">000 - RF/8</option>
+        <option value="001">001 - RF/16</option>
+        <option value="010" selected>010 - RF/32</option>
+        <option value="011">011 - RF/40</option>
+        <option value="100">100 - RF/50</option>
+        <option value="101">101 - RF/64</option>
+        <option value="110">110 - RF/100</option>
+        <option value="111">111 - RF/128</option>
+        </select></div><div id=BitRate2><select id="DataBitRate2">
+        <option value="000000">000000 - RF/2</option>
+        <option value="000001">000001 - RF/4</option>
+        <option value="000010">000010 - RF/6</option>
+        <option value="000011">000011 - RF/8</option>
+        <option value="000100">000100 - RF/10</option>
+        <option value="000101">000101 - RF/12</option>
+        <option value="000110">000110 - RF/14</option>
+        <option value="000111">000111 - RF/16</option>
+        <option value="001000">001000 - RF/18</option>
+        <option value="001001">001001 - RF/20</option>
+        <option value="001010">001010 - RF/22</option>
+        <option value="001011">001011 - RF/24</option>
+        <option value="001100">001100 - RF/26</option>
+        <option value="001101">001101 - RF/28</option>
+        <option value="001110">001110 - RF/30</option>
+        <option value="001111" selected>001111 - RF/32</option>
+        <option value="010000">010000 - RF/34</option>
+        <option value="010001">010001 - RF/36</option>
+        <option value="010010">010010 - RF/38</option>
+        <option value="010011">010011 - RF/40</option>
+        <option value="010100">010100 - RF/42</option>
+        <option value="010101">010101 - RF/44</option>
+        <option value="010110">010110 - RF/46</option>
+        <option value="010111">010111 - RF/48</option>
+        <option value="011000">011000 - RF/50</option>
+        <option value="011001">011001 - RF/52</option>
+        <option value="011010">011010 - RF/54</option>
+        <option value="011011">011011 - RF/56</option>
+        <option value="011100">011100 - RF/58</option>
+        <option value="011101">011101 - RF/60</option>
+        <option value="011110">011110 - RF/62</option>
+        <option value="011111">011111 - RF/64</option>
+        <option value="100000">100000 - RF/66</option>
+        <option value="100001">100001 - RF/68</option>
+        <option value="100010">100010 - RF/70</option>
+        <option value="100011">100011 - RF/72</option>
+        <option value="100100">100100 - RF/74</option>
+        <option value="100101">100101 - RF/76</option>
+        <option value="100110">100110 - RF/78</option>
+        <option value="100111">100111 - RF/80</option>
+        <option value="101000">101000 - RF/82</option>
+        <option value="101001">101001 - RF/84</option>
+        <option value="101010">101010 - RF/86</option>
+        <option value="101011">101011 - RF/88</option>
+        <option value="101100">101100 - RF/90</option>
+        <option value="101101">101101 - RF/92</option>
+        <option value="101110">101110 - RF/94</option>
+        <option value="101111">101111 - RF/96</option>
+        <option value="110000">110000 - RF/98</option>
+        <option value="110001">110001 - RF/100</option>
+        <option value="110010">110010 - RF/102</option>
+        <option value="110011">110011 - RF/104</option>
+        <option value="110100">110100 - RF/106</option>
+        <option value="110101">110101 - RF/108</option>
+        <option value="110110">110110 - RF/110</option>
+        <option value="110111">110111 - RF/112</option>
+        <option value="111000">111000 - RF/114</option>
+        <option value="111001">111001 - RF/116</option>
+        <option value="111010">111010 - RF/118</option>
+        <option value="111011">111011 - RF/120</option>
+        <option value="111100">111100 - RF/122</option>
+        <option value="111101">111101 - RF/124</option>
+        <option value="111110">111110 - RF/126</option>
+        <option value="111111">111111 - RF/128</option>        
+        </select>
+        </div>
+    </td></tr>
+  
+  <tr><td class=td-option>X-mode</td>
+  <td class=td-value><Select id="XMode" onchange="xmodeChange()">
+      <option value="0" selected>0 - Basic Mode</option>
+      <option value="1" >1 - X-Mode</option>
+  </td></tr>
+  
+  <tr><td class=td-option>Modulation</td>
+    <td class=td-value><select id="Modulation">
+        <option value="00000">00000 - Direct</option>
+        <option value="00001">00001 - PSK1</option>
+        <option value="00010">00010 - PSK2</option>
+        <option value="00011">00011 - PSK3</option>
+        <option value="00100">00100 - FSK1</option>
+        <option value="00101">00101 - FSK2</option>
+        <option value="00110">00110 - FSK1a</option>
+        <option value="00111">00111 - FSK2a</option>
+        <option value="01000" selected>01000 - Manachester/ASK</option>
+        <option value="10000">10000 - Bi-phase</option>
+        <option value="11000">11000 - Reserved</option>
+        </select>
+     </td></tr>
+   
+   <tr><td class=td-option>PSK CF</td>
+    <td class=td-value><select id="PSKCF">
+        <option selected value="00">00 - RF/2</option>
+        <option value="01">01 - RF/2</option>
+        <option value="10">10 - RF/2</option>
+        <option value="11">11 - RF/2</option>
+     </td></tr>
+     
+   <tr><td class=td-option>AOR</td>
+    <td class=td-value><select id="AOR"/>
+        <option value="0" selected>0 - Not Set</option>
+        <option value="1">1 - Set</option>
+        </select>
+    </td></tr>
+   
+   <tr><td class=td-option>(X-mode) OTP</td>
+     <td class=td-value><Select id="OTP">
+      <option value="0" selected>0 - Not used</option>
+      <option value="1" disabled>1 - OTP</option>
+  </td></tr>
+
+   <tr><td class=td-option>Max Block</td>
+    <td class=td-value><select id="MaxBlock">
+        <option value="001">001 - 1</option>
+        <option value="010">010 - 2</option>
+        <option value="011">011 - 3</option>
+        <option value="100">100 - 4</option>
+        <option value="101">101 - 5</option>
+        <option value="110">110 - 6</option>
+        <option value="111" selected>111 - 7</option>
+        </select>
+   </td></tr>
+
+   <tr><td class=td-option>Use Password</td>
+    <td class=td-value><select id="PWD"/>
+        <option value="0" selected >0 - Dont use password</option>
+        <option value="1">1 - Use password (stored in block 7)</option>
+        </select>
+    </td></tr>
+   
+   <tr><td class=td-option>Seq. Terminator (ST)</td>
+    <td class=td-value><select id="ST"/>
+        <option value="0" selected >0 - Not Set</option>
+        <option value="1">1 - Set</option>
+        </select>
+    </td></tr>
+   
+   <tr><td class=td-option>(X-mode) Fast Downlink</td>
+     <td class=td-value><Select id="fastDownlink">
+      <option value="0" selected>0 - Not used</option>
+      <option value="1" disabled>1 - Fast Downlink</option>
+  </td></tr>
+
+   <tr><td class=td-option>(X-mode) Inverse Data</td>
+     <td class=td-value><Select id="Inverse">
+      <option value="0" selected>0 - Not used</option>
+      <option value="1" disabled>1 - Inverse Data</option>
+  </td></tr>
+
+   <tr><td class=td-option>Init. Delay</td>
+    <td class=td-value><select id="InitDelay"/>
+        <option value="0" selected >0 - Not Set</option>
+        <option value="1">1 - Set</option>
+        </select>
+    </td></tr>
+
+   </tr>
+</table><br>
+<button class=button2 onclick="EncodeConfig1()">Build Block 0 Config</button><br>
+</div>
+</div>
+<script> 
+function HexStr (ConfigBlock)
+{
+    // Convert string to number
+    DecValue = 0;
+    for (i = 0; i < 32; i++) {
+        DecValue = DecValue << 1;
+        if (ConfigBlock.substring(i,i+1) == "1")
+           DecValue += 1;
+    }
+    HexValueLo =  (DecValue     &0xFFFF ).toString(16).toUpperCase();
+    HexValueHi = ((DecValue>>16)&0xFFFF ).toString(16).toUpperCase();
+    
+    // Pad 4 nibble string
+    while (HexValueLo.length < 4) HexValueLo = "0" + HexValueLo;
+    while (HexValueHi.length < 4) HexValueHi = "0" + HexValueHi;
+
+    HexValue = HexValueHi + HexValueLo;
+    
+    return HexValue;
+}
+
+function EncodeConfig1() {
+    xmode = false;
+    if (document.getElementById("XMode").value == 1)
+        xmode = true;
+
+    ConfigBlock = "";
+    ConfigBlock += document.getElementById("MasterKey").value;
+    ConfigBlock += document.getElementById("f1").value;
+    if (!xmode) ConfigBlock += document.getElementById("DataBitRate1").value;
+    else        ConfigBlock += document.getElementById("DataBitRate2").value;
+    ConfigBlock += document.getElementById("XMode").value;
+    ConfigBlock += document.getElementById("Modulation").value;
+    ConfigBlock += document.getElementById("PSKCF").value;
+    ConfigBlock += document.getElementById("AOR").value;
+    ConfigBlock += document.getElementById("OTP").value;
+    ConfigBlock += document.getElementById("MaxBlock").value;
+    ConfigBlock += document.getElementById("PWD").value;
+    ConfigBlock += document.getElementById("ST").value;
+    ConfigBlock += document.getElementById("fastDownlink").value;
+    ConfigBlock += document.getElementById("Inverse").value;
+    ConfigBlock += document.getElementById("InitDelay").value;
+
+    document.getElementById("Block0-0-Hex").value = HexStr (ConfigBlock);
+    document.getElementById("Block0-0-Bin").value = ConfigBlock;
+}
+function DecodeConfigBin () {
+    ConfigBlock = document.getElementById("Block0-0-Bin").value;
+    document.getElementById("Block0-0-Hex").value = HexStr (ConfigBlock);
+    DecodeConfigBinary (ConfigBlock);
+}
+function DecodeConfigHex () {
+    HexData = document.getElementById("Block0-0-Hex").value;
+    ConfigBlock = "";
+    
+    for (i = 0; i < 32; i++){
+        switch (HexData.substring(i,i+1)) {
+            case '0' : ConfigBlock += "0000"; break;
+            case '1' : ConfigBlock += "0001"; break;
+            case '2' : ConfigBlock += "0010"; break;
+            case '3' : ConfigBlock += "0011"; break;
+            case '4' : ConfigBlock += "0100"; break;
+            case '5' : ConfigBlock += "0101"; break;
+            case '6' : ConfigBlock += "0110"; break;
+            case '7' : ConfigBlock += "0111"; break;
+            case '8' : ConfigBlock += "1000"; break;
+            case '9' : ConfigBlock += "1001"; break;
+            case 'A' : ConfigBlock += "1010"; break;
+            case 'B' : ConfigBlock += "1011"; break;
+            case 'C' : ConfigBlock += "1100"; break;
+            case 'D' : ConfigBlock += "1101"; break;
+            case 'E' : ConfigBlock += "1110"; break;
+            case 'F' : ConfigBlock += "1111"; break;
+        }
+    }
+    document.getElementById("Block0-0-Bin").value = ConfigBlock;
+    DecodeConfigBinary (ConfigBlock);
+}
+
+function DecodeConfigBinary (ConfigBlock) {
+  //  ConfigBlock = document.getElementById("Block0-0-Bin").value;
+ 
+    xmode = false;
+    if (ConfigBlock.substring(14,15) == 1)
+        xmode = true;
+        
+    document.getElementById("MasterKey").value  = ConfigBlock.substring(0,4);
+    if (!xmode) {
+        document.getElementById("f1").value           = "0000000";//ConfigBlock.substring(4,11);
+        document.getElementById("DataBitRate1").value = ConfigBlock.substring(11,14);
+        document.getElementById("OTP").value          = "0"; //ConfigBlock.substring(23,24);
+        document.getElementById("fastDownlink").value = "0"; // ConfigBlock.substring(29,30);
+        document.getElementById("Inverse").value      = "0"; //ConfigBlock.substring(30,31);
+    } else {
+        document.getElementById("f1").value           = "0000";//ConfigBlock.substring(4,11);
+        document.getElementById("DataBitRate2").value = ConfigBlock.substring(8,14);
+        document.getElementById("OTP").value          = ConfigBlock.substring(23,24);
+        document.getElementById("fastDownlink").value = ConfigBlock.substring(29,30);
+        document.getElementById("Inverse").value      = ConfigBlock.substring(30,31);
+    }
+    document.getElementById("XMode").value      = ConfigBlock.substring(14,15);
+    xmodeChange ();
+    document.getElementById("Modulation").value = ConfigBlock.substring(15,20);
+    document.getElementById("PSKCF").value      = ConfigBlock.substring(20,22);
+    document.getElementById("AOR").value        = ConfigBlock.substring(22,23);
+    document.getElementById("MaxBlock").value   = ConfigBlock.substring(24,27);
+    document.getElementById("PWD").value        = ConfigBlock.substring(27,28);
+    document.getElementById("ST").value         = ConfigBlock.substring(28,29);
+    document.getElementById("InitDelay").value    = ConfigBlock.substring(31,32);
+    
+    // Patch max block
+    if (document.getElementById("MaxBlock").value == "")
+        document.getElementById("MaxBlock").value = "111";
+
+}
+function xmodeChange (){
+    //document.getElementById("Block0-0-Bin").value = "XMODE";
+    
+    if (document.getElementById("XMode").value == 0) {
+        document.getElementById("BitRate1").style.display = "inline-block";
+        document.getElementById("BitRate2").style.display = "none";
+        document.getElementById("f1").options[0].disabled = false;
+        document.getElementById("f1").options[1].disabled = true;
+        document.getElementById("f1").value = "0000000";
+
+        document.getElementById("fastDownlink").options[1].disabled = true;
+        document.getElementById("fastDownlink").value = "0";
+        document.getElementById("Inverse").options[1].disabled = true;
+        document.getElementById("Inverse").value = "0";
+        document.getElementById("OTP").options[1].disabled = true;
+        document.getElementById("OTP").value = "0";
+        
+    } else {
+        document.getElementById("BitRate1").style.display = "none";
+        document.getElementById("BitRate2").style.display = "inline-block";
+        document.getElementById("f1").options[0].disabled = true;
+        document.getElementById("f1").options[1].disabled = false;
+        document.getElementById("f1").value = "0000";
+
+        document.getElementById("fastDownlink").options[1].disabled = false;
+        //document.getElementById("fastDownlink").value = "1";
+        document.getElementById("Inverse").options[1].disabled = false;
+        //document.getElementById("Inverse").value = "1";
+        document.getElementById("OTP").options[1].disabled = false;
+//        document.getElementById("OTP").value = "0";
+
+    }
+    
+}
+</script>
+</html>
