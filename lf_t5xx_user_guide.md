@@ -29,7 +29,7 @@ Ver. 0.1 - Oct 2019
 [T5555 (Q5)](#T5555) | [T5557](#T5557) | [T5577](#T5577) 
 
 ### Links/References
- 
+[T55x7 Config Block](http://htmlpreview.github.com/?https://github.com/mwalker33/proxmark-rrg-info/blob/master/config.html) 
 
 ---
 
