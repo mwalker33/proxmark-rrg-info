@@ -26,10 +26,10 @@ Ver. 0.1 - Oct 2019
 [lf t55xx write](#write)  
 
 ### Chip Configuration
-[T55x7 Config Block](http://htmlpreview.github.com/?https://github.com/mwalker33/proxmark-rrg-info/blob/master/config.html) 
+[T5555 (Q5)](#T5555) | [T5557](#T5557) | [T5577](#T5577) 
 
 ### Links/References
-[T5555 (Q5)](#T5555) | [T5557](#T5557) | [T5577](#T5577) 
+[T55x7 Config Block](http://htmlpreview.github.com/?https://github.com/mwalker33/proxmark-rrg-info/blob/master/config.html) 
 
 ---
 
