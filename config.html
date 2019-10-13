@@ -1,7 +1,7 @@
 <html>
 <!DOCTYPE html>
 <head>
-<TITLE>T55xx Configuration</TITLE>
+<TITLE>T55x7 Configuration</TITLE>
 <style>
 body            {       font-family: verdana;
                         margin:0;
@@ -76,9 +76,18 @@ td              {       text-align:     left; /*center;*/
                     font-size: 16px;
                     width: 100%;
                 }
-
+.quickconfig    {   background-color: #DDDDDD;
+                    width: 120px;
+                    border: 1px;
+                    color: black;
+                    padding: 3px 5px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 12px;
+                }
 .settings1        {
-                        height: 520px;
+                        height: 650px;
                         /*width: 20%;*/
                         min-width       : 630px;
                         max-width       : 630px;
@@ -133,11 +142,11 @@ td              {       text-align:     left; /*center;*/
                         background-color: DDDDDD;
                         border: none;
                 }
-#BitRate1 { /*visibility: visable; */
+#BitRate1_00 { /*visibility: visable; */
             display: inline-block;
             float           : left;
           }
-#BitRate2 { /*visibility: hidden; */
+#BitRate2_00 { /*visibility: hidden; */
             display: none;
             float           : left;
           }
@@ -145,22 +154,22 @@ td              {       text-align:     left; /*center;*/
 </head>
 <body>
 <div class=title>
-<div class=heading1>T55x77 Config Block 0/Page 0</div>
+<div class=heading1>T55x7 Configuration Blocks</div>
 </div>
 <div class=data>
 <div class=settings1>
-<div class=heading2>Config. Block 0 Page 0</div>
+<div class=heading2>Block 0 Page 0 Configuration Mapping</div>
 <table>
 <tr><td>HEX</td><td><input id="Block0-0-Hex" size=9 value="000880E0"/> 
-<button class=button onclick="DecodeConfigHex()">Decode</button></td></tr>
+<button class=button onclick="DecodeConfigHex_00()">Decode</button></td></tr>
 <tr><td>Binary</td><td><input id="Block0-0-Bin" size=33 value="00000000000010001000000011100000"/>
-<button class=button onclick="DecodeConfigBin()">Decode</button>
+<button class=button onclick="DecodeConfigBin_00()">Decode</button>
 </td></tr>
 </table>
 <table class=table1>
   <tr><td class=td-heading-r><b>Option</td><td class=td-heading-l><b>Value</td><tr>
   <tr><td class=td-option>Master Key</td>
-  <td class=td-value><select id="MasterKey">
+  <td class=td-value><select id="MasterKey_00">
         <option value="0000" selected>0000 - 0 Not set</option>
         <option value="0110">0110 - 6 disable test mode</option>
         <option value="1001">1001 - 9 disable test/exteneded mode and Init Delay</option>
@@ -168,14 +177,14 @@ td              {       text-align:     left; /*center;*/
     </td></tr>
   
   <tr><td class=td-option>fixed</td>
-  <td class=td-value><Select id="f1">
+  <td class=td-value><Select id="f1_00">
       <option value="0000000" selected>0000000 - Not used</option>
       <option value="0000" disabled>0000 - Not used</option>
   </td></tr>
   
   <tr><td class=td-option>Data Bit Rate</td>
     <td class=td-value>
-        <div id=BitRate1><select id="DataBitRate1">
+        <div id=BitRate1_00><select id="DataBitRate1_00">
         <option value="000">000 - RF/8</option>
         <option value="001">001 - RF/16</option>
         <option value="010" selected>010 - RF/32</option>
@@ -184,7 +193,7 @@ td              {       text-align:     left; /*center;*/
         <option value="101">101 - RF/64</option>
         <option value="110">110 - RF/100</option>
         <option value="111">111 - RF/128</option>
-        </select></div><div id=BitRate2><select id="DataBitRate2">
+        </select></div><div id="BitRate2_00"><select id="DataBitRate2_00">
         <option value="000000">000000 - RF/2</option>
         <option value="000001">000001 - RF/4</option>
         <option value="000010">000010 - RF/6</option>
@@ -254,13 +263,13 @@ td              {       text-align:     left; /*center;*/
     </td></tr>
   
   <tr><td class=td-option>X-mode</td>
-  <td class=td-value><Select id="XMode" onchange="xmodeChange()">
+  <td class=td-value><Select id="XMode_00" onchange="xmodeChange()">
       <option value="0" selected>0 - Basic Mode</option>
       <option value="1" >1 - X-Mode</option>
   </td></tr>
   
   <tr><td class=td-option>Modulation</td>
-    <td class=td-value><select id="Modulation">
+    <td class=td-value><select id="Modulation_00">
         <option value="00000">00000 - Direct</option>
         <option value="00001">00001 - PSK1</option>
         <option value="00010">00010 - PSK2</option>
@@ -276,7 +285,7 @@ td              {       text-align:     left; /*center;*/
      </td></tr>
    
    <tr><td class=td-option>PSK CF</td>
-    <td class=td-value><select id="PSKCF">
+    <td class=td-value><select id="PSKCF_00">
         <option selected value="00">00 - RF/2</option>
         <option value="01">01 - RF/2</option>
         <option value="10">10 - RF/2</option>
@@ -284,20 +293,20 @@ td              {       text-align:     left; /*center;*/
      </td></tr>
      
    <tr><td class=td-option>AOR</td>
-    <td class=td-value><select id="AOR"/>
+    <td class=td-value><select id="AOR_00"/>
         <option value="0" selected>0 - Not Set</option>
         <option value="1">1 - Set</option>
         </select>
     </td></tr>
    
    <tr><td class=td-option>(X-mode) OTP</td>
-     <td class=td-value><Select id="OTP">
+     <td class=td-value><Select id="OTP_00">
       <option value="0" selected>0 - Not used</option>
       <option value="1" disabled>1 - OTP</option>
   </td></tr>
 
    <tr><td class=td-option>Max Block</td>
-    <td class=td-value><select id="MaxBlock">
+    <td class=td-value><select id="MaxBlock_00">
         <option value="001">001 - 1</option>
         <option value="010">010 - 2</option>
         <option value="011">011 - 3</option>
@@ -309,33 +318,33 @@ td              {       text-align:     left; /*center;*/
    </td></tr>
 
    <tr><td class=td-option>Use Password</td>
-    <td class=td-value><select id="PWD"/>
+    <td class=td-value><select id="PWD_00"/>
         <option value="0" selected >0 - Dont use password</option>
         <option value="1">1 - Use password (stored in block 7)</option>
         </select>
     </td></tr>
    
    <tr><td class=td-option>Seq. Terminator (ST)</td>
-    <td class=td-value><select id="ST"/>
+    <td class=td-value><select id="ST_00"/>
         <option value="0" selected >0 - Not Set</option>
         <option value="1">1 - Set</option>
         </select>
     </td></tr>
    
    <tr><td class=td-option>(X-mode) Fast Downlink</td>
-     <td class=td-value><Select id="fastDownlink">
+     <td class=td-value><Select id="fastDownlink_00">
       <option value="0" selected>0 - Not used</option>
       <option value="1" disabled>1 - Fast Downlink</option>
   </td></tr>
 
    <tr><td class=td-option>(X-mode) Inverse Data</td>
-     <td class=td-value><Select id="Inverse">
+     <td class=td-value><Select id="Inverse_00">
       <option value="0" selected>0 - Not used</option>
       <option value="1" disabled>1 - Inverse Data</option>
   </td></tr>
 
    <tr><td class=td-option>Init. Delay</td>
-    <td class=td-value><select id="InitDelay"/>
+    <td class=td-value><select id="InitDelay_00"/>
         <option value="0" selected >0 - Not Set</option>
         <option value="1">1 - Set</option>
         </select>
@@ -343,8 +352,131 @@ td              {       text-align:     left; /*center;*/
 
    </tr>
 </table><br>
-<button class=button2 onclick="EncodeConfig1()">Build Block 0 Config</button><br>
+<button class=button2 onclick="EncodeConfig_00()">Build Block 0 Page 1 Config</button><br>
+<br>
+<div>
+      <button class=quickconfig onclick="QuickConfig_00('00148040')">EM410x<br>(0x00148040)</button>
+      <button class=quickconfig onclick="QuickConfig_00('00107060')">HID<br>(0x00107060)</button>
+
 </div>
+</div>
+</div>
+
+
+
+
+<div class=settings1>
+<div class=heading2>Block 3 Page 1 - Analog Front End Option Set-up</div>
+<table>
+<tr><td>HEX</td><td><input id="Block3-1-Hex" size=9 value="00000000"/> 
+<button class=button onclick="DecodeConfigHex_31()">Decode</button></td></tr>
+<tr><td>Binary</td><td><input id="Block3-1-Bin" size=33 value="00000000000000000000000000000000"/>
+<button class=button onclick="DecodeConfigBin_31()">Decode</button>
+</td></tr>
+</table>
+<table class=table1>
+  <tr><td class=td-heading-r><b>Option</td><td class=td-heading-l><b>Value</td><tr>
+  <tr><td class=td-option>Option Key</td>
+  <td class=td-value><select id="OptionKey_31">
+        <option value="0000" selected>0000 - 0 AFE Not used</option>
+        <option value="0110">0110 - 6 enabled - test mode disabled</option>
+        <option value="1001">1001 - 9 enabled - test mode enabled</option>
+        </select>
+    </td></tr>
+  
+  <tr><td class=td-option>Soft Modulation</td>
+  <td class=td-value><Select id="SoftModulation_31" onchange="CheckOptionKey_31(this)">
+        <option value="000" selected>000 - Off</option>
+        <option value="010" >010 - One pulse weak</option>
+        <option value="100" >100 - One pulse strong</option>
+        <option value="110" >110 - Two pulses</option>
+        <option value="111" >111 - Smooth</option>
+        </select>
+  </td></tr>
+  
+  <tr><td class=td-option>Clamp Voltage</td>
+  <td class=td-value><Select id="ClampVolatage_31" onchange="CheckOptionKey_31(this)">
+        <option value="00" selected>00 - med. typ. 6Vp</option>
+        <option value="01" >01 - RFU</option>
+        <option value="10" >10 - low typ. 5Vp</option>
+        <option value="11" >11 - high typ. 8Vp</option>
+        </select>
+  </td></tr>
+  
+  <tr><td class=td-option>Modulation Voltage</td>
+  <td class=td-value><Select id="ModulationVoltage_31" onchange="CheckOptionKey_31(this)">
+        <option value="00" selected>00 - med. typ. 2Vp</option>
+        <option value="01" >01 - RFU</option>
+        <option value="10" >10 - low typ. 1Vp</option>
+        <option value="11" >11 - high typ. 3Vp</option>
+        </select>
+  </td></tr>
+  
+  <tr><td class=td-option>Clock Detection</td>
+  <td class=td-value><Select id="ClockDetection_31" onchange="CheckOptionKey_31(this)">
+        <option value="00" selected>00 - med. typ. 550mVp</option>
+        <option value="01" >01 - RFU</option>
+        <option value="10" >10 - low typ. 250mVp</option>
+        <option value="11" >11 - high typ. 800mVp</option>
+        </select>
+  </td></tr>
+  
+  <tr><td class=td-option>Gap Detection</td>
+  <td class=td-value><Select id="GapDetection_31" onchange="CheckOptionKey_31(this)">
+        <option value="00" selected>00 - med. typ. 500mVp</option>
+        <option value="01" >01 - RFU</option>
+        <option value="10" >10 - low typ. 250mVp</option>
+        <option value="11" >11 - high typ. 850mVp</option>
+        </select>
+  </td></tr>
+  
+  <tr><td class=td-option>Write Damping</td>
+  <td class=td-value><Select id="WriteDamping_31" onchange="CheckOptionKey_31(this)">
+        <option value="000" selected>000 - WD + low att.</option>
+        <option value="001" >001 - WD + high att.</option>
+        <option value="010" >010 - Low att.</option>
+        <option value="011" >011 - High att.</option>
+        <option value="100" >100 - WS Only</option>
+        <option value="101" >101 - Off</option>
+        <option value="110" >110 - RFU</option>
+        <option value="111" >111 - RFU</option>
+        </select>
+  </td></tr>
+
+  <tr><td class=td-option>Demod Delay</td>
+  <td class=td-value><Select id="DemodDelay_31" onchange="CheckOptionKey_31(this)">
+        <option value="00" selected>00 - None</option>
+        <option value="01" >01 - One pules</option>
+        <option value="10" >10 - Two pulses</option>
+        <option value="11" >11 - RFU</option>
+        </select>
+  </td></tr>
+  
+  <tr><td class=td-option>Downlink Protocol</td>
+  <td class=td-value><Select id="DownlinkProtocol_31" onchange="CheckOptionKey_31(this)">
+        <option value="00" selected>00 - Fixed Bit Length</option>
+        <option value="01" >01 - Long Leading Reference</option>
+        <option value="10" >10 - Leading Zero Reference</option>
+        <option value="11" >11 - 1 of 4 Coding Reference</option>
+        </select>
+  </td></tr>
+  
+  <tr><td class=td-option>Reserved</td>
+  <td class=td-value><Select id="Resereved_31" onchange="CheckOptionKey_31(this)">
+        <option value="0000000000" selected>0000000000 - Reserved</option>
+        </select>
+  </td></tr>
+  </table>
+  <br>
+  <button class=button2 onclick="EncodeConfig_31()">Build Block 3 Page 1Config</button><br>
+ <br> 
+ <div>
+  <button class=quickconfig onclick="QuickConfig_31('00000000')">Fixed Bit DL<br>(0x0000000)</button>
+  <button class=quickconfig onclick="QuickConfig_31('90000400')">Long Leading DL<br>(0x9000400)</button>
+  <button class=quickconfig onclick="QuickConfig_31('90000800')">Leading 0<br>(0x9000800)</button>
+  <button class=quickconfig onclick="QuickConfig_31('90000C00')">1 of 4 DL<br>(0x9000C00)</button>
+
+  <div>
 </div>
 <script> 
 function HexStr (ConfigBlock)
@@ -368,42 +500,37 @@ function HexStr (ConfigBlock)
     return HexValue;
 }
 
-function EncodeConfig1() {
+function EncodeConfig_00() {
     xmode = false;
-    if (document.getElementById("XMode").value == 1)
+    if (document.getElementById("XMode_00").value == 1)
         xmode = true;
 
     ConfigBlock = "";
-    ConfigBlock += document.getElementById("MasterKey").value;
-    ConfigBlock += document.getElementById("f1").value;
-    if (!xmode) ConfigBlock += document.getElementById("DataBitRate1").value;
-    else        ConfigBlock += document.getElementById("DataBitRate2").value;
-    ConfigBlock += document.getElementById("XMode").value;
-    ConfigBlock += document.getElementById("Modulation").value;
-    ConfigBlock += document.getElementById("PSKCF").value;
-    ConfigBlock += document.getElementById("AOR").value;
-    ConfigBlock += document.getElementById("OTP").value;
-    ConfigBlock += document.getElementById("MaxBlock").value;
-    ConfigBlock += document.getElementById("PWD").value;
-    ConfigBlock += document.getElementById("ST").value;
-    ConfigBlock += document.getElementById("fastDownlink").value;
-    ConfigBlock += document.getElementById("Inverse").value;
-    ConfigBlock += document.getElementById("InitDelay").value;
+    ConfigBlock += document.getElementById("MasterKey_00").value;
+    ConfigBlock += document.getElementById("f1_00").value;
+    if (!xmode) ConfigBlock += document.getElementById("DataBitRate1_00").value;
+    else        ConfigBlock += document.getElementById("DataBitRate2_00").value;
+    ConfigBlock += document.getElementById("XMode_00").value;
+    ConfigBlock += document.getElementById("Modulation_00").value;
+    ConfigBlock += document.getElementById("PSKCF_00").value;
+    ConfigBlock += document.getElementById("AOR_00").value;
+    ConfigBlock += document.getElementById("OTP_00").value;
+    ConfigBlock += document.getElementById("MaxBlock_00").value;
+    ConfigBlock += document.getElementById("PWD_00").value;
+    ConfigBlock += document.getElementById("ST_00").value;
+    ConfigBlock += document.getElementById("fastDownlink_00").value;
+    ConfigBlock += document.getElementById("Inverse_00").value;
+    ConfigBlock += document.getElementById("InitDelay_00").value;
 
     document.getElementById("Block0-0-Hex").value = HexStr (ConfigBlock);
     document.getElementById("Block0-0-Bin").value = ConfigBlock;
 }
-function DecodeConfigBin () {
-    ConfigBlock = document.getElementById("Block0-0-Bin").value;
-    document.getElementById("Block0-0-Hex").value = HexStr (ConfigBlock);
-    DecodeConfigBinary (ConfigBlock);
-}
-function DecodeConfigHex () {
-    HexData = document.getElementById("Block0-0-Hex").value;
+function HexToBin (HexData)
+{
     ConfigBlock = "";
     
     for (i = 0; i < 32; i++){
-        switch (HexData.substring(i,i+1)) {
+        switch (HexData.substring(i,i+1).toUpperCase()) {
             case '0' : ConfigBlock += "0000"; break;
             case '1' : ConfigBlock += "0001"; break;
             case '2' : ConfigBlock += "0010"; break;
@@ -422,79 +549,162 @@ function DecodeConfigHex () {
             case 'F' : ConfigBlock += "1111"; break;
         }
     }
+    return ConfigBlock;
+}
+function DecodeConfigBin_00 () {
+    ConfigBlock = document.getElementById("Block0-0-Bin").value;
+    document.getElementById("Block0-0-Hex").value = HexStr (ConfigBlock);
+    DecodeConfigBinary_00 (ConfigBlock);
+}
+function DecodeConfigHex_00 () {
+    HexData = document.getElementById("Block0-0-Hex").value;
+    ConfigBlock = HexToBin (HexData);
     document.getElementById("Block0-0-Bin").value = ConfigBlock;
-    DecodeConfigBinary (ConfigBlock);
+    DecodeConfigBinary_00 (ConfigBlock);
 }
 
-function DecodeConfigBinary (ConfigBlock) {
+function DecodeConfigBinary_00 (ConfigBlock) {
   //  ConfigBlock = document.getElementById("Block0-0-Bin").value;
  
     xmode = false;
     if (ConfigBlock.substring(14,15) == 1)
         xmode = true;
         
-    document.getElementById("MasterKey").value  = ConfigBlock.substring(0,4);
+    document.getElementById("MasterKey_00").value  = ConfigBlock.substring(0,4);
     if (!xmode) {
-        document.getElementById("f1").value           = "0000000";//ConfigBlock.substring(4,11);
-        document.getElementById("DataBitRate1").value = ConfigBlock.substring(11,14);
-        document.getElementById("OTP").value          = "0"; //ConfigBlock.substring(23,24);
-        document.getElementById("fastDownlink").value = "0"; // ConfigBlock.substring(29,30);
-        document.getElementById("Inverse").value      = "0"; //ConfigBlock.substring(30,31);
+        document.getElementById("f1_00").value           = "0000000";//ConfigBlock.substring(4,11);
+        document.getElementById("DataBitRate1_00").value = ConfigBlock.substring(11,14);
+        document.getElementById("OTP_00").value          = "0"; //ConfigBlock.substring(23,24);
+        document.getElementById("fastDownlink_00").value = "0"; // ConfigBlock.substring(29,30);
+        document.getElementById("Inverse_00").value      = "0"; //ConfigBlock.substring(30,31);
     } else {
-        document.getElementById("f1").value           = "0000";//ConfigBlock.substring(4,11);
-        document.getElementById("DataBitRate2").value = ConfigBlock.substring(8,14);
-        document.getElementById("OTP").value          = ConfigBlock.substring(23,24);
-        document.getElementById("fastDownlink").value = ConfigBlock.substring(29,30);
-        document.getElementById("Inverse").value      = ConfigBlock.substring(30,31);
+        document.getElementById("f1_00").value           = "0000";//ConfigBlock.substring(4,11);
+        document.getElementById("DataBitRate2_00").value = ConfigBlock.substring(8,14);
+        document.getElementById("OTP_00").value          = ConfigBlock.substring(23,24);
+        document.getElementById("fastDownlink_00").value = ConfigBlock.substring(29,30);
+        document.getElementById("Inverse_00").value      = ConfigBlock.substring(30,31);
     }
-    document.getElementById("XMode").value      = ConfigBlock.substring(14,15);
+    document.getElementById("XMode_00").value      = ConfigBlock.substring(14,15);
     xmodeChange ();
-    document.getElementById("Modulation").value = ConfigBlock.substring(15,20);
-    document.getElementById("PSKCF").value      = ConfigBlock.substring(20,22);
-    document.getElementById("AOR").value        = ConfigBlock.substring(22,23);
-    document.getElementById("MaxBlock").value   = ConfigBlock.substring(24,27);
-    document.getElementById("PWD").value        = ConfigBlock.substring(27,28);
-    document.getElementById("ST").value         = ConfigBlock.substring(28,29);
-    document.getElementById("InitDelay").value    = ConfigBlock.substring(31,32);
+    document.getElementById("Modulation_00").value = ConfigBlock.substring(15,20);
+    document.getElementById("PSKCF_00").value      = ConfigBlock.substring(20,22);
+    document.getElementById("AOR_00").value        = ConfigBlock.substring(22,23);
+    document.getElementById("MaxBlock_00").value   = ConfigBlock.substring(24,27);
+    document.getElementById("PWD_00").value        = ConfigBlock.substring(27,28);
+    document.getElementById("ST_00").value         = ConfigBlock.substring(28,29);
+    document.getElementById("InitDelay_00").value    = ConfigBlock.substring(31,32);
     
     // Patch max block
-    if (document.getElementById("MaxBlock").value == "")
-        document.getElementById("MaxBlock").value = "111";
+    if (document.getElementById("MaxBlock_00").value == "")
+        document.getElementById("MaxBlock_00").value = "111";
 
+}
+function QuickConfig_00 (HexData) {
+    ConfigBlock = HexToBin (HexData);
+    DecodeConfigBinary_00 (ConfigBlock);
+    EncodeConfig_00();
 }
 function xmodeChange (){
     //document.getElementById("Block0-0-Bin").value = "XMODE";
     
-    if (document.getElementById("XMode").value == 0) {
-        document.getElementById("BitRate1").style.display = "inline-block";
-        document.getElementById("BitRate2").style.display = "none";
-        document.getElementById("f1").options[0].disabled = false;
-        document.getElementById("f1").options[1].disabled = true;
-        document.getElementById("f1").value = "0000000";
+    if (document.getElementById("XMode_00").value == 0) {
+        document.getElementById("BitRate1_00").style.display = "inline-block";
+        document.getElementById("BitRate2_00").style.display = "none";
+        document.getElementById("f1_00").options[0].disabled = false;
+        document.getElementById("f1_00").options[1].disabled = true;
+        document.getElementById("f1_00").value = "0000000";
 
-        document.getElementById("fastDownlink").options[1].disabled = true;
-        document.getElementById("fastDownlink").value = "0";
-        document.getElementById("Inverse").options[1].disabled = true;
-        document.getElementById("Inverse").value = "0";
-        document.getElementById("OTP").options[1].disabled = true;
-        document.getElementById("OTP").value = "0";
+        document.getElementById("fastDownlink_00").options[1].disabled = true;
+        document.getElementById("fastDownlink_00").value = "0";
+        document.getElementById("Inverse_00").options[1].disabled = true;
+        document.getElementById("Inverse_00").value = "0";
+        document.getElementById("OTP_00").options[1].disabled = true;
+        document.getElementById("OTP_00").value = "0";
         
     } else {
-        document.getElementById("BitRate1").style.display = "none";
-        document.getElementById("BitRate2").style.display = "inline-block";
-        document.getElementById("f1").options[0].disabled = true;
-        document.getElementById("f1").options[1].disabled = false;
-        document.getElementById("f1").value = "0000";
+        document.getElementById("BitRate1_00").style.display = "none";
+        document.getElementById("BitRate2_00").style.display = "inline-block";
+        document.getElementById("f1_00").options[0].disabled = true;
+        document.getElementById("f1_00").options[1].disabled = false;
+        document.getElementById("f1_00").value = "0000";
 
-        document.getElementById("fastDownlink").options[1].disabled = false;
+        document.getElementById("fastDownlink_00").options[1].disabled = false;
         //document.getElementById("fastDownlink").value = "1";
-        document.getElementById("Inverse").options[1].disabled = false;
+        document.getElementById("Inverse_00").options[1].disabled = false;
         //document.getElementById("Inverse").value = "1";
-        document.getElementById("OTP").options[1].disabled = false;
+        document.getElementById("OTP_00").options[1].disabled = false;
 //        document.getElementById("OTP").value = "0";
 
     }
     
 }
+function EncodeConfig_31() {
+    ConfigBlock = "";
+    ConfigBlock += document.getElementById("OptionKey_31").value;
+    ConfigBlock += document.getElementById("SoftModulation_31").value;
+    ConfigBlock += document.getElementById("ClampVolatage_31").value;
+    ConfigBlock += document.getElementById("ModulationVoltage_31").value;
+    ConfigBlock += document.getElementById("ClockDetection_31").value;
+    ConfigBlock += document.getElementById("GapDetection_31").value;
+    ConfigBlock += document.getElementById("WriteDamping_31").value;
+    ConfigBlock += document.getElementById("DemodDelay_31").value;
+    ConfigBlock += document.getElementById("DownlinkProtocol_31").value;
+    ConfigBlock += document.getElementById("Resereved_31").value;
+    
+    document.getElementById("Block3-1-Hex").value = HexStr (ConfigBlock);
+    document.getElementById("Block3-1-Bin").value = ConfigBlock;
+}
+function CheckOptionKey_31 (opt) {
+ // document.getElementById("Block3-1-Hex").value = opt.value;
+    if (parseInt(opt.value,10) != 0) { // Option Set, ensure config is enabled
+        OptionKey = document.getElementById("OptionKey_31").value;
+        if (OptionKey == "0000")
+            document.getElementById("OptionKey_31").value = "1001";
+    }
+}
+function DecodeConfigBin_31 () {
+    ConfigBlock = document.getElementById("Block3-1-Bin").value;
+    document.getElementById("Block3-1-Hex").value = HexStr (ConfigBlock);
+    DecodeConfigBinary_31 (ConfigBlock);
+}
+function DecodeConfigHex_31 () {
+    HexData = document.getElementById("Block3-1-Hex").value;
+    ConfigBlock = HexToBin (HexData);
+    DecodeConfigBinary_31 (ConfigBlock);
+}
+function QuickConfig_31 (HexData) {
+    ConfigBlock = HexToBin (HexData);
+    DecodeConfigBinary_31 (ConfigBlock);
+    EncodeConfig_31();
+}
+
+function DecodeConfigBinary_31 (ConfigBlock) {
+    
+    // Pad with 0
+    while (ConfigBlock.length != 32)
+        ConfigBlock += "0";
+    
+    document.getElementById("Block3-1-Bin").value = ConfigBlock;
+    
+    if ((ConfigBlock.substring(0,4) != "0110") && (ConfigBlock.substring(0,4) != "1001")) {
+        if (parseInt(ConfigBlock.substring(4,32)) != 0)
+            document.getElementById("OptionKey_31").value         = "1001";
+        else
+            document.getElementById("OptionKey_31").value         = "0000";
+    } else
+        document.getElementById("OptionKey_31").value         = ConfigBlock.substring(0,4);
+
+    document.getElementById("SoftModulation_31").value    = ConfigBlock.substring(4,7);
+    document.getElementById("ClampVolatage_31").value     = ConfigBlock.substring(7,9);
+    document.getElementById("ModulationVoltage_31").value = ConfigBlock.substring(9,11);
+    document.getElementById("ClockDetection_31").value    = ConfigBlock.substring(11,13);
+    document.getElementById("GapDetection_31").value      = ConfigBlock.substring(13,15);
+    document.getElementById("WriteDamping_31").value      = ConfigBlock.substring(15,18);
+    document.getElementById("DemodDelay_31").value        = ConfigBlock.substring(18,20);
+    document.getElementById("DownlinkProtocol_31").value  = ConfigBlock.substring(20,22);
+    document.getElementById("Resereved_31").value         = "0000000000";//ConfigBlock.substring(22,23);
+    
+}
+
 </script>
 </html>
