@@ -159,7 +159,7 @@ td              {       text-align:     left; /*center;*/
 </div>
 <div class=data>
 <div class=settings1>
-<div class=heading2>Block 0 Page 0 Configuration Mapping</div>
+<div class=heading2>Block 0 Page 0 Configuration Mapping (T5577/T5557)</div>
 <table>
 <tr><td>HEX</td><td><input id="Block0-0-Hex" size=9 value="000880E0"/> 
 <button class=button onclick="DecodeConfigHex_00()">Decode</button></td></tr>
@@ -358,7 +358,6 @@ td              {       text-align:     left; /*center;*/
 <div>
       <button class=quickconfig onclick="QuickConfig_00('00148040')">EM410x<br>(0x00148040)</button>
       <button class=quickconfig onclick="QuickConfig_00('00107060')">HID<br>(0x00107060)</button>
-
 </div>
 </div>
 </div>
@@ -480,6 +479,178 @@ td              {       text-align:     left; /*center;*/
 
   <div>
 </div>
+</div>
+</div>
+
+<div class=settings1>
+<div class=heading2>Q5B Configuration block 0 bit Mapping (T5555)</div>
+<table>
+<tr><td>HEX</td><td><input id="Block0-Q5-Hex" size=9 value="6000F00E"/> 
+<button class=button onclick="DecodeConfigHex_Q5()">Decode</button></td></tr>
+<tr><td>Binary</td><td><input id="Block0-Q5-Bin" size=33 value="01100000000000001111000000001110"/>
+<button class=button onclick="DecodeConfigBin_Q5()">Decode</button>
+</td></tr>
+</table>
+<table class=table1>
+  <tr><td class=td-heading-r><b>Option</td><td class=td-heading-l><b>Value</td><tr>
+  <tr><td class=td-option>Fixed</td>
+  <td class=td-value><select id="Fixed_Q5">
+        <option value="011000000000" selected>011000000000 - Fixed</option>
+        </select>
+    </td></tr>
+  
+  <tr><td class=td-option>Page Select</td>
+  <td class=td-value><Select id="PageSelect_Q5">
+      <option value="0" selected>0 - Page 0</option>
+      <option value="1">1 - Page 1</option>
+  </td></tr>
+
+  <tr><td class=td-option>Fast Write</td>
+  <td class=td-value><Select id="FastWrite_Q5">
+      <option value="0" selected>0 - Disabled</option>
+      <option value="1">1 - Enabled</option>
+  </td></tr>
+  
+  <tr><td class=td-option>Data bit rate</td>
+    <td class=td-value>
+        <select id="DataBitRate_Q5">
+        <option value="000000">000000 - RF/2</option>
+        <option value="000001">000001 - RF/4</option>
+        <option value="000010">000010 - RF/6</option>
+        <option value="000011">000011 - RF/8</option>
+        <option value="000100">000100 - RF/10</option>
+        <option value="000101">000101 - RF/12</option>
+        <option value="000110">000110 - RF/14</option>
+        <option value="000111">000111 - RF/16</option>
+        <option value="001000">001000 - RF/18</option>
+        <option value="001001">001001 - RF/20</option>
+        <option value="001010">001010 - RF/22</option>
+        <option value="001011">001011 - RF/24</option>
+        <option value="001100">001100 - RF/26</option>
+        <option value="001101">001101 - RF/28</option>
+        <option value="001110">001110 - RF/30</option>
+        <option value="001111" selected>001111 - RF/32</option>
+        <option value="010000">010000 - RF/34</option>
+        <option value="010001">010001 - RF/36</option>
+        <option value="010010">010010 - RF/38</option>
+        <option value="010011">010011 - RF/40</option>
+        <option value="010100">010100 - RF/42</option>
+        <option value="010101">010101 - RF/44</option>
+        <option value="010110">010110 - RF/46</option>
+        <option value="010111">010111 - RF/48</option>
+        <option value="011000">011000 - RF/50</option>
+        <option value="011001">011001 - RF/52</option>
+        <option value="011010">011010 - RF/54</option>
+        <option value="011011">011011 - RF/56</option>
+        <option value="011100">011100 - RF/58</option>
+        <option value="011101">011101 - RF/60</option>
+        <option value="011110">011110 - RF/62</option>
+        <option value="011111">011111 - RF/64</option>
+        <option value="100000">100000 - RF/66</option>
+        <option value="100001">100001 - RF/68</option>
+        <option value="100010">100010 - RF/70</option>
+        <option value="100011">100011 - RF/72</option>
+        <option value="100100">100100 - RF/74</option>
+        <option value="100101">100101 - RF/76</option>
+        <option value="100110">100110 - RF/78</option>
+        <option value="100111">100111 - RF/80</option>
+        <option value="101000">101000 - RF/82</option>
+        <option value="101001">101001 - RF/84</option>
+        <option value="101010">101010 - RF/86</option>
+        <option value="101011">101011 - RF/88</option>
+        <option value="101100">101100 - RF/90</option>
+        <option value="101101">101101 - RF/92</option>
+        <option value="101110">101110 - RF/94</option>
+        <option value="101111">101111 - RF/96</option>
+        <option value="110000">110000 - RF/98</option>
+        <option value="110001">110001 - RF/100</option>
+        <option value="110010">110010 - RF/102</option>
+        <option value="110011">110011 - RF/104</option>
+        <option value="110100">110100 - RF/106</option>
+        <option value="110101">110101 - RF/108</option>
+        <option value="110110">110110 - RF/110</option>
+        <option value="110111">110111 - RF/112</option>
+        <option value="111000">111000 - RF/114</option>
+        <option value="111001">111001 - RF/116</option>
+        <option value="111010">111010 - RF/118</option>
+        <option value="111011">111011 - RF/120</option>
+        <option value="111100">111100 - RF/122</option>
+        <option value="111101">111101 - RF/124</option>
+        <option value="111110">111110 - RF/126</option>
+        <option value="111111">111111 - RF/128</option>        
+        </select>
+        </div>
+    </td></tr>
+
+    <tr><td class=td-option>AOR</td>
+    <td class=td-value><select id="AOR_Q5"/>
+        <option value="0" selected>0 - Not Set</option>
+        <option value="1">1 - Set</option>
+        </select>
+    </td></tr>
+
+   <tr><td class=td-option>Use Password</td>
+    <td class=td-value><select id="PWD_Q5"/>
+        <option value="0" selected >0 - Dont use password</option>
+        <option value="1">1 - Use password (stored in block 7)</option>
+        </select>
+    </td></tr>
+   
+   <tr><td class=td-option>PSK CF</td>
+    <td class=td-value><select id="PSKCF_Q5">
+        <option selected value="00">00 - RF/2</option>
+        <option value="01">01 - RF/2</option>
+        <option value="10">10 - RF/2</option>
+        <option value="11">11 - RF/2</option>
+     </td></tr>
+
+   <tr><td class=td-option>Inverse Data</td>
+     <td class=td-value><Select id="Inverse_Q5">
+      <option value="0" selected>0 - Not Inverted</option>
+      <option value="1" disabled>1 - Inverse Data</option>
+  </td></tr>
+
+  <tr><td class=td-option>Modulation</td>
+    <td class=td-value><select id="Modulation_Q5">
+        <option value="000" Selected>000 - Manachester/ASK</option>
+        <option value="001">001 - PSK1</option>
+        <option value="010">010 - PSK2</option>
+        <option value="011">011 - PSK3</option>
+        <option value="100">100 - FSK1 (a=0)</option>
+        <option value="101">101 - FSK2 (a=0)</option>
+        <option value="110">110 - Biphase</option>
+        <option value="111">111 - NRZ/Direct</option>
+        </select>
+     </td></tr>
+
+   <tr><td class=td-option>Max Block</td>
+    <td class=td-value><select id="MaxBlock_Q5">
+        <option value="001">001 - 1</option>
+        <option value="010">010 - 2</option>
+        <option value="011">011 - 3</option>
+        <option value="100">100 - 4</option>
+        <option value="101">101 - 5</option>
+        <option value="110">110 - 6</option>
+        <option value="111" selected>111 - 7</option>
+        </select>
+   </td></tr>
+
+   <tr><td class=td-option>Seq. Terminator (ST)</td>
+    <td class=td-value><select id="ST_Q5"/>
+        <option value="0" selected >0 - Not Set</option>
+        <option value="1">1 - Set</option>
+        </select>
+    </td></tr>
+</table><br>
+<button class=button2 onclick="EncodeConfig_Q5()">Build Block 0 Config (Q5)</button><br>
+<br>
+<div>
+      <button class=quickconfig onclick="QuickConfig_Q5('6001F004')">EM410x<br>(0x6001F004)</button>
+      <button class=quickconfig onclick="QuickConfig_Q5('60018056')">HID<br>(0x60018056)</button>
+</div>
+</div>
+</div>
+
 <script> 
 function HexStr (ConfigBlock)
 {
@@ -706,6 +877,59 @@ function DecodeConfigBinary_31 (ConfigBlock) {
     document.getElementById("DownlinkProtocol_31").value  = ConfigBlock.substring(20,22);
     document.getElementById("Resereved_31").value         = "0000000000";//ConfigBlock.substring(22,23);
     
+}
+function EncodeConfig_Q5() {
+
+    ConfigBlock = "";
+    ConfigBlock += "011000000000";// Fixed all document.getElementById("MasterKey_00").value;
+    ConfigBlock += document.getElementById("PageSelect_Q5").value;
+    ConfigBlock += document.getElementById("FastWrite_Q5").value;
+    ConfigBlock += document.getElementById("DataBitRate_Q5").value;
+    ConfigBlock += document.getElementById("AOR_Q5").value;
+    ConfigBlock += document.getElementById("PWD_Q5").value;
+    ConfigBlock += document.getElementById("PSKCF_Q5").value;
+    ConfigBlock += document.getElementById("Inverse_Q5").value;
+    ConfigBlock += document.getElementById("Modulation_Q5").value;
+    ConfigBlock += document.getElementById("MaxBlock_Q5").value;
+    ConfigBlock += document.getElementById("ST_Q5").value;
+
+    document.getElementById("Block0-Q5-Hex").value = HexStr (ConfigBlock);
+    document.getElementById("Block0-Q5-Bin").value = ConfigBlock;
+}
+function DecodeConfigBin_Q5 () {
+    ConfigBlock = document.getElementById("Block0-Q5-Bin").value;
+    document.getElementById("Block0-Q5-Hex").value = HexStr (ConfigBlock);
+    DecodeConfigBinary_Q5 (ConfigBlock);
+}
+function DecodeConfigHex_Q5 () {
+    HexData = document.getElementById("Block0-Q5-Hex").value;
+    ConfigBlock = HexToBin (HexData);
+    document.getElementById("Block0-Q5-Bin").value = ConfigBlock;
+    DecodeConfigBinary_Q5 (ConfigBlock);
+}
+function QuickConfig_Q5 (HexData) {
+    ConfigBlock = HexToBin (HexData);
+    DecodeConfigBinary_Q5 (ConfigBlock);
+    EncodeConfig_Q5();
+}
+function DecodeConfigBinary_Q5 (ConfigBlock) {
+
+    document.getElementById("Fixed_Q5").value      = "011000000000";//ConfigBlock.substring(0,4);
+    document.getElementById("PageSelect_Q5").value = ConfigBlock.substring(12,13);
+    document.getElementById("FastWrite_Q5").value  = ConfigBlock.substring(13,14);
+    document.getElementById("DataBitRate_Q5").value= ConfigBlock.substring(14,20);
+    document.getElementById("AOR_Q5").value        = ConfigBlock.substring(20,21);
+    document.getElementById("PWD_Q5").value        = ConfigBlock.substring(21,22);
+    document.getElementById("PSKCF_Q5").value      = ConfigBlock.substring(22,24);
+    document.getElementById("Inverse_Q5").value    = ConfigBlock.substring(24,25);
+    document.getElementById("Modulation_Q5").value = ConfigBlock.substring(25,28);
+    document.getElementById("MaxBlock_Q5").value   = ConfigBlock.substring(28,31);
+    document.getElementById("ST_Q5").value         = ConfigBlock.substring(31,32);
+    
+    // Patch max block
+    if (document.getElementById("MaxBlock_Q5").value == "")
+        document.getElementById("MaxBlock_Q5").value = "111";
+
 }
 
 </script>
